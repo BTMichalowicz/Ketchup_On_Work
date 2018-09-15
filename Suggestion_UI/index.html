@@ -4,30 +4,9 @@
 
   <head>
 
-    <meta charset="utf-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <meta name="description" content="">
-
-    <meta name="author" content="">
-
-    <link rel="icon" href="../../../../favicon.ico">
-
+    <link rel="icon" href="../Tomato.ico">
     <title>Ketchup On Your Work: The All-New Tomato Timer for your CS/Kitchen Needs</title>
-
-
-
-    <!-- Bootstrap core CSS -->
-
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-
-
-    <!-- Custom styles for this template -->
-
-    <link href="starter-template.css" rel="stylesheet">
-
+    <link href="style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
 
   </head>
@@ -35,55 +14,30 @@
 
 
   <body>
-      <div id="Ketchup">
-    <img id = "Ketim"src = "pics/100percent.png" alt = "Hello" style="width:200px; height: 350px;  margin-left: 850px;"></div>
-  </div>
-
-
-    <div id="message"></div>
-
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-
-      <a class="navbar-brand text-center" href="#">Ketchup</a>
-
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-
-        <span class="navbar-toggler-icon"></span>
-
-      </button>
-
-
-
-        <form class="form-inline my-2 my-lg-0">
-
-          <!-- <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"> -->
-
-         <!--  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
-
-        </form>
-
-      </div>
-
-    </nav>
-
+      <nav>
+          <ul>
+          <li><a href="#">Ketchup</a></li>
+          <li><a href="#">Ketchup</a></li>
+          </ul>
+      </nav>
+    
+      
+    <div class="Ketchup">
+    <img id = "Ketim"src = "pics/100percent.png" alt = "Hello" width="200" height="400">
+    </div>
 
 
     <main role="main" class="container">
 
-
-
-      <div class="starter-template">
-
         <h1 id = "timer"><span id="minutes">10</span>:<span id ="seconds">00</span></h1>
-<div class = "ScrollText">
+        <div class = "ScrollText">
         <h3>Current Task:</h3>
-      </div>
-
-        <button type="button" class="btn btn-danger">Skip Task</button>
+        </div>
+<!--        <button type="button" class="btn btn-danger">Skip Task</button>-->
 
         <!-- <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p> -->
 
-      </div>
+<!--      </div>-->
 
   <div id="myProgress">
 
@@ -101,27 +55,7 @@
 
              
 
-
-
-
-
     </main><!-- /.container -->
-
-
-
-    <!-- Bootstrap core JavaScript
-
-    ================================================== -->
-
-    <!-- Placed at the end of the document so the pages load faster -->
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-
-    <script src="assets/js/popper.min.js"></script>
-
-    <script src="dist/js/bootstrap.min.js"></script>
 
     <script type="text/javascript">
 
@@ -161,16 +95,18 @@ src="https://www.youtube.com/embed/uKvc9dUgykA?autoplay=1">
 
 
     <script type="text/javascript">
+        var br = false;
 
 document.getElementById('timer').innerHTML =
 
-  25 + ":" + 00;
+  00 + ":" + 05;
 
-startTimer();
+startTimer(br);
 
 
 
-function startTimer() {
+
+function startTimer(br) {
 
   var presentTime = document.getElementById('timer').innerHTML;
 
@@ -182,9 +118,20 @@ function startTimer() {
 
   if(s==59){m=m-1}
 
-  if(m<0){alert('timer completed');
+  if(m < 0 && !br){
+        breakTime();
+  } else if (m < 0 && br == true ) {
+    document.getElementById('timer').innerHTML =
+        00 + ":" + 25;
+        br = false;        
+        
+    
+        startTimer(br);
+        Process.abort();
 
-  Process.abort();}
+        
+    }
+
 
   
 
@@ -208,8 +155,19 @@ function checkSecond(sec) {
 
 }
 
+function breakTime(){
+    br = true;
+    document.getElementById('timer').innerHTML =
+
+    0 + ":" + 10;
+    
+    
+    startTimer(true);
+    Process.abort();
+  
+    
+}
     </script>
-    <div class="starter-template">
         <!-- <h1 id = "timer"><span id="minutes">10</span>:<span id ="seconds">00</span></h1> -->
             
 
@@ -246,7 +204,6 @@ function checkSecond(sec) {
     change();
 
     </script>
-
   </body>
 
 </html>

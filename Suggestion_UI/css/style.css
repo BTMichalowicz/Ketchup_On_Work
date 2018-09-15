@@ -1,0 +1,122 @@
+*{
+	font-size: 100%;
+	color: black;
+	margin: 0;
+	padding: 0;
+    
+}
+
+nav {
+    background: #333;
+    position: fixed;
+    width: 100%;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 10px;
+}
+nav a:hover {
+    background-color: #555;
+}
+
+@media screen and (min-width: 768px){
+    nav ul {
+        display: flex;
+        justify-content: flex-start;
+    }
+    
+}
+
+
+#myProgress {
+  width: 100%;
+  background-color: white;
+}
+
+#myBar {
+  width: 1%;
+  height: 30px;
+  background-color: red;
+  border: 3px solid black;
+}
+
+.Ketchup {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-top: 5%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)),url(pics/burgers.png);
+    
+}
+
+.Ketchup #Ketim {
+}
+
+
+.ScrollText {
+ height: 50px;	
+ overflow: hidden;
+ position: relative;
+}
+.ScrollText h3 {
+ font-size: 3em;
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ margin: 0;
+ line-height: 50px;
+ text-align: center;
+text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+
+ /* Starting position */
+ -moz-transform:translateX(100%);
+ -webkit-transform:translateX(100%);	
+ transform:translateX(100%);
+ /* Apply animation to this element */	
+ -moz-animation: ScrollText 15s linear infinite;
+ -webkit-animation: ScrollText 15s linear infinite;
+ animation: ScrollText 15s linear infinite;
+}
+/* Move it (define the animation) */
+@-moz-keyframes ScrollText {
+ 0%   { -moz-transform: translateX(100%); }
+ 100% { -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes ScrollText {
+ 0%   { -webkit-transform: translateX(100%); }
+ 100% { -webkit-transform: translateX(-100%); }
+}
+@keyframes ScrollText {
+ 0%   { 
+ -moz-transform: translateX(100%); /* Firefox bug fix */
+ -webkit-transform: translateX(100%); /* Firefox bug fix */
+ transform: translateX(100%); 		
+ }
+ 100% { 
+ -moz-transform: translateX(-100%); /* Firefox bug fix */
+ -webkit-transform: translateX(-100%); /* Firefox bug fix */
+ transform: translateX(-100%); 
+ }
+}
+
+.container {
+    text-align: center;
+}
+.container h1 {
+    font-family: 'Acme','Lato',sans-serif;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color:red ;
+    text-emphasis-color: aqua;
+    font-size: 1200%;
+    word-spacing: 4px;
+    letter-spacing: 1px;
+    text-shadow: -6px 0 black, 0 6px black, 6px 0 black, 0 -6px black;
+}
