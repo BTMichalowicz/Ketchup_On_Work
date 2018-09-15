@@ -6,7 +6,7 @@
 
     <link rel="icon" href="../Tomato.ico">
     <title>Ketchup On Your Work: The All-New Tomato Timer for your CS/Kitchen Needs</title>
-    <link href="style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
 
   </head>
@@ -16,7 +16,6 @@
   <body>
       <nav>
           <ul>
-          <li><a href="#">Ketchup</a></li>
           <li><a href="#">Ketchup</a></li>
           </ul>
       </nav>
@@ -60,7 +59,7 @@
              
 
     </main><!-- /.container -->
-
+    <script src="assets/js/yoga.js"></script>
     <script type="text/javascript">
       function move() {
       var elem = document.getElementById("myBar");   
@@ -86,7 +85,7 @@ src="https://www.youtube.com/embed/uKvc9dUgykA?autoplay=1">
     <script type="text/javascript">
         var br = false;
 document.getElementById('timer').innerHTML =
-  00 + ":" + 05;
+  25 + ":" + 01;
 startTimer(br);
 function startTimer(br) {
   var presentTime = document.getElementById('timer').innerHTML;
@@ -97,10 +96,11 @@ function startTimer(br) {
   if(m < 0 && !br){
       document.getElementById('first').innerHTML =
   "SBUHacks";
+      document.getElementById('Ketim').src=getYogaPose();
         breakTime();
   } else if (m < 0 && br == true ) {
     document.getElementById('timer').innerHTML =
-        00 + ":" + 25;
+        25 + ":" + 00;
         br = false;        
         
     
@@ -121,7 +121,7 @@ function checkSecond(sec) {
 function breakTime(){
     br = true;
     document.getElementById('timer').innerHTML =
-    0 + ":" + 10;
+    05 + ":" + 01;
     
     
     startTimer(true);
