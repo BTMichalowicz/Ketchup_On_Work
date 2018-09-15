@@ -1,53 +1,43 @@
 <!doctype html>
 <html lang="en">
-    <head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="Tomato.ico">
+    <link rel="icon" href="../../../../favicon.ico">
+    <link rel="stylesheet" href="/assets/css/flipclock.css">
 
     <title>Ketchup On Your Work: The All-New Tomato Timer for your CS/Kitchen Needs</title>
+
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="starter-template.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+  <script src="lib/easytimer/dist/easytimer.min.js"></script>
+<script>
+    var timerInstance = new Timer();
+</script>
   </head>
 
   <body>
-      
-      <script src = "task.js"></script>
- 
+    <div class="your-clock"></div>
+    
+    <script src="/assets/js/libs/jquery.js"></script>
+    <script src="/assets/js/flipclock/flipclock.min.js"></script>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" href="#">"Ketchup" On Your Work!!</a>
+      <a class="navbar-brand text-center" href="#">Ketchup</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-        
-        <button type="button" onclick="task.js">Testing tasks</button>
 
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-      <!--     <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li> -->
-     <!--      <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a> -->
-            </div>
-          </li>
-        </ul>
         <form class="form-inline my-2 my-lg-0">
           <!-- <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"> -->
          <!--  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
@@ -57,55 +47,32 @@
 
     <main role="main" class="container">
 
-         <main role="main" class="container">
-
       <div class="starter-template">
-        <h1>10:00</h1>
-  
-<!-- HTML --> 
-<div class="ScrollText">
-<h3>Finish the Hackathon Project!!! </h3>
-</div>
+        <h1 id = "timer"><span id="minutes">10</span>:<span id ="seconds">00</span></h1>
+        <h2>Current Task:</h2>
         <button type="button" class="btn btn-danger">Skip Task</button>
         <!-- <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p> -->
       </div>
-      <button onclick="move()">Click Me</button>
+  <div id="myProgress">
+    <div id="myBar"></div>
+  </div>
 
+  <div id="Ketchup">
+    <img id = "Ketim"src = "pics/100percent.png" alt = "Hello"></div>
+  </div>
 
-    </main><!-- /.container -->
-
-     <!--  <div class="starter-template">
-        <h2> "Ketchup On Your Work"</h2>
-        <h2>The All-New Tomato Timer for your CS/Kitchen Needs </h2>
-			<h1 class="Timer""> Enter your time Below:</h1>
-      <form>
-        Minutes: <input type = "text" id="Minutes" name= "Minutes"><br>
-        Seconds: <input type = "text" id="Seconds" name="Seconds"><br>
-
-        <input type="Button" value="Start my timer!" onclick="parse_input()" >
-      </form>
-      <br>
-
-      <h4> Directions: <br>
-        Enter a number of minutes between 0 and 60<br>
-          Enter a number of seconds between 0 and 59<br>
-          We will check if you've entered the incorrect information :)<br>
-          Get to work doing your thing with the timer running! <br>As soon as you're done, you will be asked if you completed your task or not. <br>If you have completed your task, then it will get crossed off your list.  Otherwise... GET BACK TO WORK :) 
-        </h4>
- -->
-        <!-- <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p> -->
-      </div>
-
-<!--    <audio src="../Zelda_Chest.mp3" autoplay>
-<p>If you are reading this, it is because your browser does not support the audio element.     </p>
-<embed src="Zelda_Chest.mp3" width="180" height="90" hidden="true" />
-</audio> -->
-
-<iframe width="0" height="0"
+  <div id="countdownExample">
+    <div class="values"></div>
+</div>
+             
+    <iframe width="0" height="0"
 src="https://www.youtube.com/embed/uKvc9dUgykA?autoplay=1">
 </iframe>
 
 
+<div class="ScrollText">
+<h3>Finish the Hackathon Project!!! </h3>
+</div>
     </main><!-- /.container -->
 
     <!-- Bootstrap core JavaScript
@@ -115,44 +82,57 @@ src="https://www.youtube.com/embed/uKvc9dUgykA?autoplay=1">
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="assets/js/popper.min.js"></script>
     <script src="dist/js/bootstrap.min.js"></script>
-
-      <script>
- 
-        function parse_input(){
-          var x =document.getElementById("Minutes").value;
-          var y = document.getElementById("Seconds").value;
-
-
-          if(x == '' || y == ''){
-            alert("Please input SOMETHING!!")
-            location.reload();
-          }else{
-          if(isNaN(x) || isNaN(y)){
-            alert("Please input whole numbers!!");
-            location.reload();
-          }else{
-          if (x<0 || x >60){
-            alert("Values out of range!! Please try again");
-            location.reload()
-          }
-          if(y<0 || y>59){
-            alert("Values out of range!! Please try again");
-            location.reload();
-          }
-
-          var minutes = x;
-          var seconds = y;
-        
-
-          var win = window.open("index2.html");
-          win.focus();
-          
+    <script type="text/javascript">
+      function move() {
+      var elem = document.getElementById("myBar");   
+      var width = 1;
+      var id = setInterval(frame, 15000);
+      function frame() {
+        if (width >= 100) {
+          clearInterval(id);
+        } else {
+          width++; 
+          elem.style.width = width + '%'; 
         }
       }
+    }
+    move();
+    </script>
+    <script type="text/javascript">
+      var timer = 60;
+      var min = 0;
+      var sec = 0;
+    function startTimer(){
+        if (sec <= 0 && min >= 0) {
+          sec = 59;
+          min = min - 1;
+        } else if (sec > 0 && min >= 0) {
+          sec = sec - 1;
         }
 
-	 
-  </script> 
+      document.getElementById("minutes").innerHTML = min.toString();
+      document.getElementById("seconds").innerHTML = seconds.toString();
 
+      setTimeout(function() {
+        startTimer(); },1000);
+      }
+    </script>
+    <script type="text/javascript">
+      function change() {
+      var num = 100;
+      var elem = document.getElementById("Ketim");   
+      var id = setInterval(frame, 150000);
+      function frame() {
+        if (num <= 0) {
+          document.getElementById('Ketim').src="pics/" + num + "percent.png";
+          clearInterval(id);
+        } else {
+          num = num-10; 
+          document.getElementById('Ketim').src="pics/" + num + "percent.png";
+        }
+      }
+    }
+    change();
+    </script>
   </body>
 </html>
