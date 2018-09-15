@@ -15,6 +15,10 @@
     <!-- Custom styles for this template -->
     <link href="starter-template.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -35,12 +39,14 @@
     <main role="main" class="container">
 
       <div class="starter-template">
-        <h1>10:00</h1>
+        <h1 id = "timer"><span id="minutes">10</span>:<span id ="seconds">00</span></h1>
         <h2>Current Task:</h2>
         <button type="button" class="btn btn-danger">Skip Task</button>
         <!-- <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p> -->
       </div>
-      <button onclick="move()">Click Me</button>
+  <div id="myProgress">
+    <div id="myBar"></div>
+  </div>
 
 
     </main><!-- /.container -->
@@ -52,6 +58,34 @@
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="assets/js/popper.min.js"></script>
     <script src="dist/js/bootstrap.min.js"></script>
-    <script src="assets/js/update_timer.js"></script>
+    <script type="text/javascript">
+      function move() {
+      var elem = document.getElementById("myBar");   
+      var width = 1;
+      var id = setInterval(frame, 10);
+      function frame() {
+        if (width >= 100) {
+          clearInterval(id);
+        } else {
+          width++; 
+          elem.style.width = width + '%'; 
+        }
+      }
+    }
+    move();
+    </script>
+    <script type="text/javascript">
+      var minutes = 5;
+      var seconds = 30;
+      function timer(var minutes, var seconds){
+        if ((seconds > 0) && (minutes > 0)) {
+          if (seconds < 10)
+          document.getElementById("seconds").innerHTML = "0" + seconds;
+          else {
+          document.getElementById("seconds").innerHTML = seconds;
+          }
+        }
+      }
+    </script>
   </body>
 </html>
