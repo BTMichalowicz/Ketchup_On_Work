@@ -59,7 +59,10 @@
 			<h1 class="Timer""> Enter your time Below:</h1>
       <form>
         Minutes: <input type = "text" id="Minutes" name= "Minutes"><br>
-        Seconds: <input type = "text" id="Seconds" name="Seconds">
+        Seconds: <input type = "text" id="Seconds" name="Seconds"><br>
+
+        <input type="Button" value="Start my timer!" onclick="parse_input()" >
+      </form>
 
         <!-- <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p> -->
       </div>
@@ -75,32 +78,33 @@
     <script src="assets/js/popper.min.js"></script>
     <script src="dist/js/bootstrap.min.js"></script>
 
-  <!-- <script>
-	 function get_Time(){
-    var time = 0;
-    time = prompt("Enter timer (mm:ss): ")
-     var s = time.split(":")[0];
-     var s2 = time.split(":")[1];
-     while (1){
-      if(!(s typeof number) || !(s2 typeof number)){
-        alert("Illegal input!");
-      }else{
-      if((s0  && s<26 && s2>=0 && s2<60)){
-        break;
-      }else{
-		
-         alert("Time is out of bounds, please try again");
-         time = prompt("Enter timer (mm:ss): ")
-         s = time.split(":")[0];
-         s2 = time.split(":")[1];
-  }
-}
-      }
-    //   alert(s + ":" + s2);
-  }
+      <script>
+        function parse_input(){
+          var x =document.getElementById("Minutes").value;
+          var y = document.getElementById("Seconds").value;
+
+          if(isNaN(x) || isNaN(y)){
+            alert("Please input numbers!!");
+            location.reload();
+          }else{
+          if (x<0 || x >60){
+            alert("Values out of range!! Please try again");
+            location.reload()
+          }
+          if(y<0 || y>59){
+            alert("Values out of range!! Please try again");
+            location.reload();
+          }
+
+          var minutes = x;
+          var seconds = y;
+
+          alert (minutes + ":" + seconds);
+        }
+        }
 
 	 
-  </script> -->
+  </script> 
 
   </body>
 </html>
