@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
+    <link rel="icon" href="../Tomato.ico">
 
     <title>Ketchup On Your Work: The All-New Tomato Timer for your CS/Kitchen Needs</title>
 
@@ -56,9 +56,14 @@
       <div class="starter-template">
         <h2> "Ketchup On Your Work"</h2>
         <h2>The All-New Tomato Timer for your CS/Kitchen Needs </h2>
-        <h1>10:00</h1>
+			<h1 class="Timer""> Enter your time Below:</h1>
+      <form>
+        Minutes: <input type = "text" id="Minutes" name= "Minutes"><br>
+        Seconds: <input type = "text" id="Seconds" name="Seconds">
+
         <!-- <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p> -->
       </div>
+
 
     </main><!-- /.container -->
 
@@ -69,6 +74,33 @@
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="assets/js/popper.min.js"></script>
     <script src="dist/js/bootstrap.min.js"></script>
-    <script src="assets/js/update_timer.js"></script>
+
+  <!-- <script>
+	 function get_Time(){
+    var time = 0;
+    time = prompt("Enter timer (mm:ss): ")
+     var s = time.split(":")[0];
+     var s2 = time.split(":")[1];
+     while (1){
+      if(!(s typeof number) || !(s2 typeof number)){
+        alert("Illegal input!");
+      }else{
+      if((s0  && s<26 && s2>=0 && s2<60)){
+        break;
+      }else{
+		
+         alert("Time is out of bounds, please try again");
+         time = prompt("Enter timer (mm:ss): ")
+         s = time.split(":")[0];
+         s2 = time.split(":")[1];
+  }
+}
+      }
+    //   alert(s + ":" + s2);
+  }
+
+	 
+  </script> -->
+
   </body>
 </html>
