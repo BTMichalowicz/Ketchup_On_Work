@@ -87,12 +87,18 @@
     <script src="dist/js/bootstrap.min.js"></script>
 
       <script>
+ 
         function parse_input(){
           var x =document.getElementById("Minutes").value;
           var y = document.getElementById("Seconds").value;
 
+
+          if(x == '' || y == ''){
+            alert("Please input SOMETHING!!")
+            location.reload();
+          }else{
           if(isNaN(x) || isNaN(y)){
-            alert("Please input numbers!!");
+            alert("Please input whole numbers!!");
             location.reload();
           }else{
           if (x<0 || x >60){
@@ -106,9 +112,13 @@
 
           var minutes = x;
           var seconds = y;
+        
 
+          var win = window.open("index2.html");
+          win.focus();
           
         }
+      }
         }
 
 	 
