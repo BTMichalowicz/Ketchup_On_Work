@@ -13,11 +13,7 @@
     "googleapis": "^27.0.0",
     "http-errors": "~1.6.2",
     "jade": "~1.11.0",
-<<<<<<< HEAD
-    "morgan": "~1.9.0"
-=======
     "morgan": "~1.9.0",
     "body-parser": "~1.18.3"
->>>>>>> 4d7727acc1026e797ffb66db3ab3fdd22a6c74a2
   }
 }
