@@ -6,7 +6,7 @@
 
     <link rel="icon" href="../Tomato.ico">
     <title>Ketchup On Your Work: The All-New Tomato Timer for your CS/Kitchen Needs</title>
-    <link href="css/style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
 
   </head>
@@ -32,6 +32,10 @@
         <h1 id = "timer"><span id="minutes">10</span>:<span id ="seconds">00</span></h1>
         <div class = "ScrollText">
         <h3>Current Task:</h3>
+            <ul><li id="first">Task at Hand</li>
+            </ul>
+
+
         </div>
 <!--        <button type="button" class="btn btn-danger">Skip Task</button>-->
 
@@ -58,35 +62,20 @@
     </main><!-- /.container -->
 
     <script type="text/javascript">
-
       function move() {
-
       var elem = document.getElementById("myBar");   
-
       var width = 1;
-
       var id = setInterval(frame, 15000);
-
       function frame() {
-
         if (width >= 100) {
-
           clearInterval(id);
-
         } else {
-
           width++; 
-
           elem.style.width = width + '%'; 
-
         }
-
       }
-
     }
-
     move();
-
     </script>
    <iframe width="0" height="0"
 src="https://www.youtube.com/embed/uKvc9dUgykA?autoplay=1">
@@ -96,70 +85,43 @@ src="https://www.youtube.com/embed/uKvc9dUgykA?autoplay=1">
 
     <script type="text/javascript">
         var br = false;
-
 document.getElementById('timer').innerHTML =
-
-  25+ ":" + 01;
-
+  00 + ":" + 05;
 startTimer(br);
-
-
-
-
 function startTimer(br) {
-
   var presentTime = document.getElementById('timer').innerHTML;
-
   var timeArray = presentTime.split(/[:]+/);
-
   var m = timeArray[0];
-
   var s = checkSecond((timeArray[1] - 1));
-
   if(s==59){m=m-1}
-
   if(m < 0 && !br){
+      document.getElementById('first').innerHTML =
+  "SBUHacks";
         breakTime();
   } else if (m < 0 && br == true ) {
     document.getElementById('timer').innerHTML =
-        25 + ":" + 01;
+        00 + ":" + 25;
         br = false;        
         
     
         startTimer(br);
         Process.abort();
-
         
     }
-
-
   
-
   document.getElementById('timer').innerHTML =
-
     m + ":" + s;
-
   setTimeout(startTimer, 1000);
-
 }
-
-
-
 function checkSecond(sec) {
-
   if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
-
   if (sec < 0) {sec = "59"};
-
   return sec;
-
 }
-
 function breakTime(){
     br = true;
     document.getElementById('timer').innerHTML =
-
-    5 + ":" + 01;
+    0 + ":" + 10;
     
     
     startTimer(true);
@@ -172,37 +134,21 @@ function breakTime(){
             
 
     <script type="text/javascript">
-
       function change() {
-
       var num = 100;
-
       var elem = document.getElementById("Ketim");   
-
       var id = setInterval(frame, 150000);
-
       function frame() {
-
         if (num <= 0) {
-
           document.getElementById('Ketim').src="pics/" + num + "percent.png";
-
           clearInterval(id);
-
         } else {
-
           num = num-10; 
-
           document.getElementById('Ketim').src="pics/" + num + "percent.png";
-
         }
-
       }
-
     }
-
     change();
-
     </script>
   </body>
 

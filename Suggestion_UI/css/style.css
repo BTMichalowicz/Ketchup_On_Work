@@ -64,8 +64,15 @@ nav a:hover {
  height: 50px;	
  overflow: hidden;
  position: relative;
+
 }
-.ScrollText h3 {
+
+.ScrollText ul {
+    padding-left:500px;
+}
+.ScrollText h3,
+.ScrollText ul{
+    list-style: none;
  font-size: 3em;
  position: absolute;
  width: 100%;
@@ -74,6 +81,9 @@ nav a:hover {
  line-height: 50px;
  text-align: center;
 text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+
+
+
 
  /* Starting position */
  -moz-transform:translateX(100%);
