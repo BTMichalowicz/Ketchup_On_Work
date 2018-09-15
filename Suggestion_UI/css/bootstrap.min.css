@@ -34,4 +34,15 @@
   background-color: red;
 }
 
+.countdownContainer {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	text-align: center;
+	background: white;
+	border: 1px solid red;
+	padding: 10px;
+	box-shadow: 0 0 5px 3px gray;
+}
 /*# sourceMappingURL=bootstrap.min.css.map */
