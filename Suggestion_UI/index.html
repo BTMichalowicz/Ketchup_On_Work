@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
+    <link rel="icon" href="../Tomato.ico">
 
     <title>Ketchup On Your Work: The All-New Tomato Timer for your CS/Kitchen Needs</title>
 
@@ -56,9 +56,17 @@
       <div class="starter-template">
         <h2> "Ketchup On Your Work"</h2>
         <h2>The All-New Tomato Timer for your CS/Kitchen Needs </h2>
-        <h1>10:00</h1>
+			<h1 class="Timer""> Enter your time Below:</h1>
+      <form>
+        Minutes: <input type = "text" id="Minutes" name= "Minutes"><br>
+        Seconds: <input type = "text" id="Seconds" name="Seconds"><br>
+
+        <input type="Button" value="Start my timer!" onclick="parse_input()" >
+      </form>
+
         <!-- <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p> -->
       </div>
+
 
     </main><!-- /.container -->
 
@@ -69,6 +77,34 @@
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="assets/js/popper.min.js"></script>
     <script src="dist/js/bootstrap.min.js"></script>
-    <script src="assets/js/update_timer.js"></script>
+
+      <script>
+        function parse_input(){
+          var x =document.getElementById("Minutes").value;
+          var y = document.getElementById("Seconds").value;
+
+          if(isNaN(x) || isNaN(y)){
+            alert("Please input numbers!!");
+            location.reload();
+          }else{
+          if (x<0 || x >60){
+            alert("Values out of range!! Please try again");
+            location.reload()
+          }
+          if(y<0 || y>59){
+            alert("Values out of range!! Please try again");
+            location.reload();
+          }
+
+          var minutes = x;
+          var seconds = y;
+
+          alert (minutes + ":" + seconds);
+        }
+        }
+
+	 
+  </script> 
+
   </body>
 </html>
