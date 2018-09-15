@@ -5,6 +5,9 @@ function move() {
 
     function frame() {
         if (width >= 100) {
+            if(width == 100){
+                //Play
+            }
             clearInterval(id);
         } else {
             width++;
@@ -13,6 +16,7 @@ function move() {
     }
 }
 move();
+
 var timer = 60;
 var min = 0;
 var sec = 0;
